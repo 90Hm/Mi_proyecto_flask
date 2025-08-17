@@ -1,16 +1,20 @@
-from flask import Flask, render_template
+from flask import Flask
 
 app = Flask(__name__)
 
-# Ruta principal
 @app.route('/')
-def index():
-    return render_template("index.html")
-
-# Ruta dinámica con parámetro
-@app.route('/usuario/<nombre>')
-def usuario(nombre):
-    return f"Bienvenido, {nombre}!"
+def home():
+    return """
+    <html>
+        <head>
+            <title>¡Hola! Bienvenido a mi proyecto Flask 🚀</title>
+        </head>
+        <body>
+            <h1>¡Hola! Bienvenido a mi proyecto Flask 🚀</h1>
+            <p>Brayan Camacho</p>
+        </body>
+    </html>
+    """
 
 if __name__ == '__main__':
     app.run(debug=True)
